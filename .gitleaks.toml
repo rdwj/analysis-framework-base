@@ -1,0 +1,50 @@
+[allowlist]
+  description = "Project-specific allowlist for false positives"
+
+  # Ignore based on file paths
+  paths = [
+    # Example files
+    '''\/example.*\.pem$''',
+    '''\/examples\/''',
+    '''\.example$''',
+    '''\.sample$''',
+
+    # Test fixtures
+    '''\/tests?\/fixtures\/''',
+    '''\/test\/.*\.key$''',
+    '''_test\.py$''',
+    '''\.test\.js$''',
+
+    # Documentation
+    '''README\.md$''',
+    '''docs\/.*\.md$''',
+    '''\/.*\.md$''',
+
+    # Configuration templates
+    '''\.template$''',
+    '''\.tmpl$''',
+  ]
+
+  # Ignore based on line content
+  regexes = [
+    # Test/example passwords
+    '''password.*['"]\s*['"]\s*$''',
+    '''password.*Pass123''',
+    '''password.*example''',
+    '''password.*test''',
+    '''SecurePass123''',
+    '''SecureP@ss123''',
+
+    # Documentation placeholders
+    '''# Your (private key|certificate|api key|token) here''',
+    '''<your-.*-here>''',
+    '''REPLACE_WITH_YOUR''',
+    '''YOUR_.*_HERE''',
+    '''-----BEGIN PRIVATE KEY-----.*# Your''',
+    '''-----BEGIN PRIVATE KEY-----.*Example''',
+
+    # Placeholder tokens in documentation
+    '''pypi-.*# Example''',
+    '''sk_.*# Example''',
+    '''REDACTED''',
+  ]

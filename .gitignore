@@ -132,3 +132,24 @@ dmypy.json
 # OS
 .DS_Store
 Thumbs.db
+
+# PyPI credentials and secrets
+.pypirc
+
+# API keys and tokens
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+secrets.yaml
+secrets.yml
+*_key.txt
+*_token.txt
+*_secret.txt
+api_keys.txt
+tokens.txt
+
+# Additional environment files
+.env.local
+.env.*.local
